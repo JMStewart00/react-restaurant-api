@@ -24,8 +24,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
-    'https://sheltered-refuge-85246.herokuapp.com/',
-    'sheltered-refuge-85246.herokuapp.com',
+    'https://sheltered-refuge-85246.herokuapp.com',
+    'https://*.sheltered-refuge-85246.herokuapp.com',
+    '*.herokuapp.com',
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
