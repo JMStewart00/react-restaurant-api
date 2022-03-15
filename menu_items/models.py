@@ -10,8 +10,18 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
+class Cuisine(models.Model):
+    label = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.label
+
+    class Meta:
+        verbose_name_plural = "Cusines"
+
 class Item(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField(null=True, blank=True)
