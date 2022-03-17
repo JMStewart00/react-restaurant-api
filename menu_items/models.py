@@ -20,8 +20,8 @@ class Cuisine(models.Model):
         verbose_name_plural = "Cusines"
 
 class Item(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
-    cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE, null=True, blank=True)
+    category = models.ForeignKey(Category, related_name="category_label", on_delete=models.CASCADE, null=True, blank=True)
+    cuisine = models.ForeignKey(Cuisine, related_name="cuisine_label", on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField(null=True, blank=True)

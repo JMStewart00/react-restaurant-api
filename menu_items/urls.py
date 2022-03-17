@@ -5,9 +5,8 @@ from menu_items.views import CategoryViewSet, ItemViewSet, index, send_json
 router = routers.DefaultRouter()
 
 router.register(r'category', CategoryViewSet)
-router.register(r'item', ItemViewSet)
+router.register(r'json', ItemViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('json', send_json),
 ]

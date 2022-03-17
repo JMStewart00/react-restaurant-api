@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from menu_items.serializers import CateogrySerializer, ItemSerializer, CuisineSerializer
+from menu_items.serializers import CategorySerializer, ItemSerializer, CuisineSerializer
 from menu_items.models import Category, Item, Cuisine
 from django.http import HttpResponse, JsonResponse
 
@@ -21,7 +21,7 @@ def send_json(request):
 
 class CategoryViewSet(viewsets.ModelViewSet):
    queryset = Category.objects.all()
-   serializer_class = CateogrySerializer
+   serializer_class = CategorySerializer
 
 class ItemViewSet(viewsets.ModelViewSet):
    queryset = Item.objects.all()
